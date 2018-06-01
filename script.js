@@ -12,7 +12,7 @@
 			<div class="main_img"></div>
 		`;
 		create.querySelector('.main_img').addEventListener('click', function(){
-			var audio = new Audio('./Okitawin2.ogx');
+			var audio = new Audio('./sound.mp3');
 			audio.play();
 		});
 		document.body.appendChild(create);
