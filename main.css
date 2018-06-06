@@ -13,11 +13,63 @@ body {
 	justify-content: center;
 }
 
-#container{
+/*.button {
+	border-radius: 10px;
+	height: 36px;
+	width: 136px;
+	cursor: pointer;
+	background: url("./button.png") no-repeat center center;
+	background-size: cover;
+}*/
+
+.links {
+	margin-top: 10px;
+	height: 40px;
+	width: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.twitter_button {
+	height: 40px;
+	width: 40px;
+	background: url(./tweet.png) no-repeat center center;
+	background-size: cover;
+}
+
+.text {
+	background-color: #FFFFFF;
+	margin-top: 10px;
+	display:flex;
+	justify-content: center;
+	color: #222222;
+	font-size: 20px;
+	text-align: center;
+	height: fit
+	width: auto;
+}
+
+.input{
+	margin-top: 10px;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.container{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	color: #222222;
+}
+
+.header {
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+	font-weight: bold;
+	font-size: 50px;
+	color: #FFFFFF;
 }
 
 .counter{
