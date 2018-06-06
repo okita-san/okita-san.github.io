@@ -25,10 +25,10 @@
 
 	function displayCalculator(){
 		var calc = document.createElement('div');
-		calc.className = "container"
+		calc.className = "container";
 		calc.innerHTML=`
-			<form class="input">
-			How many rolls are you willing to spend?
+			<form class="input" id="calculator">
+			How many rolls (not quartz) are you willing to spend?
 			<input type="text" id="roll_form">
 			<input type="submit" class="button" value="Make Me Salty">
 			</form>
@@ -36,6 +36,7 @@
 		calc.querySelector('.input').addEventListener('submit', function(e) {
 			e.preventDefault();
 			var rolls = document.getElementById("roll_form").value;
+			document.getElementById("roll_form").value = "";
 			if (isNaN(rolls) || rolls <= 0 || rolls%1 != 0) {
 				alert("Don't troll");
 			}
@@ -52,7 +53,7 @@
 	function calculateProbability(rolls) {
 		var probability = (1-Math.pow(0.993, rolls))*100;
 		probability = Math.round(probability);
-		var costJP = getCheapest(rolls).toFixed(2);
+		var costJP = getCheapest(rolls*3).toFixed(2);
 		var costNA = yenToUSD(costJP).toFixed(2);
 		var text = document.createElement('div');
 		text.className = "text"
@@ -62,7 +63,6 @@
 		This also costs ${costJP}¥ or $${costNA} using the cheapest options possible. <br>
 		Calculated using rates and prices listed on the F/GO Wikipedia.
 		`;
-		console.log("x");
 		document.body.appendChild(text);
 	}
 
@@ -70,29 +70,28 @@
 		return yen*0.0091;
 	}
 
-	function getCheapest(rolls){
-		if (rolls <= 0) {
+	function getCheapest(quartz){
+		if (quartz <= 0) {
 			return 0;
 		}
 		else {
-			if ((rolls/167) > 1) {
-				console.log("lol", 167%rolls);
-				return 9800 + getCheapest(rolls-167);
+			if ((quartz/167) > 1) {
+				return 9800 + getCheapest(quartz-167);
 			}
-			else if ((rolls/76) > 1) {
-				return 4800 + getCheapest(rolls-76);
+			else if ((quartz/76) > 1) {
+				return 4800 + getCheapest(quartz-76);
 			}
-			else if ((rolls/41) > 1) {
-				return 2900 + getCheapest(rolls-41);
+			else if ((quartz/41) > 1) {
+				return 2900 + getCheapest(quartz-41);
 			}
-			else if ((rolls/18) > 1) {
-				return 1400 + getCheapest(rolls-18);
+			else if ((quartz/18) > 1) {
+				return 1400 + getCheapest(quartz-18);
 			}
-			else if ((rolls/5) > 1) {
-				return 480 + getCheapest(rolls-5);
+			else if ((quartz/5) > 1) {
+				return 480 + getCheapest(quartz-5);
 			}
 			else {
-				return 120 + getCheapest(rolls-1);
+				return 120 + getCheapest(quartz-1);
 			}
 		}
 	}
