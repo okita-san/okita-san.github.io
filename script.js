@@ -12,9 +12,9 @@
 		create.innerHTML=`
 			<div class="header">大勝利ー！</div>
 			<div class="main_img"></div>
-			<div class="links">
-			<a href="https://twitter.com/prismatisms" class="twitter_button"></a>
-			</div>
+			//<div class="links">
+			//<a href="https://twitter.com/prismatisms" class="twitter_button"></a>
+			//</div>
 		`;
 		create.querySelector('.main_img').addEventListener('click', function(){
 			var audio = new Audio('./sound.mp3');
@@ -30,7 +30,7 @@
 			<form class="input" id="calculator">
 			How many rolls (not quartz) are you willing to spend?
 			<input type="text" id="roll_form">
-			<input type="submit" class="button" value="Make Me Salty">
+			<input type="submit" class="button" value="Calculate">
 			</form>
 		`;
 		calc.querySelector('.input').addEventListener('submit', function(e) {
