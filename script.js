@@ -12,9 +12,6 @@
 		create.innerHTML=`
 			<div class="header">大勝利ー！</div>
 			<div class="main_img"></div>
-			//<div class="links">
-			//<a href="https://twitter.com/prismatisms" class="twitter_button"></a>
-			//</div>
 		`;
 		create.querySelector('.main_img').addEventListener('click', function(){
 			var audio = new Audio('./sound.mp3');
