@@ -25,7 +25,7 @@
 		calc.className = "container";
 		calc.innerHTML=`
 			<form class="input" id="calculator">
-			How many rolls (not quartz) are you willing to spend?
+			How many rolls are you willing to spend?
 			<input type="text" id="roll_form">
 			<input type="submit" class="button" value="Calculate">
 			</form>
