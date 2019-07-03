@@ -10,7 +10,7 @@
 		var create = document.createElement('div');
 		create.className = "container";
 		create.innerHTML=`
-			<div class="header">大勝利ー！</div>
+			<div class="header">ようこそ！</div>
 			<div class="main_img"></div>
 		`;
 		create.querySelector('.main_img').addEventListener('click', function(){
